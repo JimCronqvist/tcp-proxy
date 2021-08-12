@@ -25,7 +25,7 @@ docker build -t tcp-proxy .
 The following example forwards TCP requests on port `3306` to the MySQL server `db.domain.com`.
 
 ```
-docker run -it -p 3306:3306 --rm -e "HOST=db.domain.com" -e "PORT=3306 tcp-proxy
+docker run -it -p 3306:3306 --rm -e "HOST=db.domain.com" -e "PORT=3306" tcp-proxy
 ```
 
 ### docker-compose
@@ -34,7 +34,7 @@ docker run -it -p 3306:3306 --rm -e "HOST=db.domain.com" -e "PORT=3306 tcp-proxy
 version: '3.5'
 services:
   tcp-proxy:
-    image: ghcr.io/jimcronqvist/tcp-proxy:latest
+    image: ghcr.io/jimcronqvist/tcp-proxy:master
     container_name: tcp-proxy
     restart: unless-stopped
     environment:
