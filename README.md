@@ -28,7 +28,7 @@ The following example forwards TCP requests on port `3306` to the MySQL server `
 docker run -it -p 3306:3306 --rm -e "HOST=db.domain.com" -e "PORT=3306" tcp-proxy
 ```
 
-### docker-compose
+### docker-compose example
 
 ```
 version: '3.5'
@@ -40,4 +40,6 @@ services:
     environment:
       - HOST=db.domain.com
       - PORT=3306
+    ports:
+      - 3306:3306
 ```
